@@ -1,0 +1,415 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Spare Hour | AI help for Glasgow small businesses</title>
+<meta name="description" content="We set up AI that answers your enquiries, chases invoices and keeps you visible on Google and Instagram. Glasgow based, plain English, free 20 minute chat.">
+<meta property="og:title" content="Spare Hour | AI help for Glasgow small businesses">
+<meta property="og:description" content="Get your evenings back. AI that answers enquiries, chases invoices and brings in customers. Free 20 minute chat.">
+<meta property="og:image" content="https://shahkark11-byte.github.io/spare-hour/og.png">
+<meta property="og:url" content="https://shahkark11-byte.github.io/spare-hour/">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#16202e">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<!-- TRACKING: paste the Meta Pixel and Google tag (gtag.js) snippets here once the ad accounts exist. See ADS_PLAN.md section 6. -->
+
+<style>
+:root{
+  --ink:#16202e; --ink-2:#2b3646; --muted:#5d6878;
+  --cream:#f6f1e9; --paper:#fffdf9; --line:#e4dccf;
+  --stone:#b5523b; --stone-dark:#913f2c; --stone-soft:#f3e0d8;
+  --green:#2f7a5b; --green-soft:#dcefe5;
+  --radius:18px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,system-ui,sans-serif;background:var(--cream);color:var(--ink);line-height:1.6;font-size:17px;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:"Bricolage Grotesque",Inter,sans-serif;line-height:1.08;letter-spacing:-.02em}
+a{color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+
+/* nav */
+nav{position:sticky;top:0;z-index:10;background:rgba(246,241,233,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:66px}
+.logo{display:flex;align-items:center;gap:10px;font-family:"Bricolage Grotesque";font-weight:800;font-size:22px;text-decoration:none}
+.logo-mark{width:32px;height:32px;border-radius:50%;background:var(--ink);position:relative;flex:none}
+.logo-mark::before{content:"";position:absolute;inset:6px;border-radius:50%;background:conic-gradient(var(--stone) 0 25%,transparent 25%)}
+.logo-mark::after{content:"";position:absolute;inset:13px;border-radius:50%;background:var(--ink)}
+.nav-links{display:flex;gap:28px;align-items:center;font-size:15px;font-weight:500}
+.nav-links a{text-decoration:none;color:var(--ink-2)}
+.nav-links a:hover{color:var(--stone)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 22px;border-radius:999px;font-weight:600;font-size:16px;text-decoration:none;border:0;cursor:pointer;transition:transform .15s,background .15s}
+.btn:hover{transform:translateY(-1px)}
+.btn-primary{background:var(--stone);color:#fff}
+.btn-primary:hover{background:var(--stone-dark)}
+.btn-ghost{background:transparent;border:1.5px solid var(--ink);color:var(--ink)}
+.btn-sm{padding:10px 18px;font-size:14px}
+@media(max-width:760px){.nav-links a:not(.btn){display:none}}
+
+/* hero */
+.hero{padding:72px 0 64px}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+.eyebrow{display:inline-block;font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--stone);margin-bottom:18px}
+.hero h1{font-size:clamp(42px,6vw,72px);font-weight:800}
+.hero h1 em{font-style:normal;color:var(--stone)}
+.hero p.lead{font-size:20px;color:var(--ink-2);margin:22px 0 32px;max-width:34ch}
+.hero-ctas{display:flex;gap:12px;flex-wrap:wrap}
+.hero-note{margin-top:18px;font-size:14px;color:var(--muted)}
+
+/* phone mock */
+.phone{width:min(330px,100%);margin:0 auto;background:var(--ink);border-radius:40px;padding:12px;box-shadow:0 30px 60px -20px rgba(22,32,46,.45)}
+.screen{background:#ece5dd;border-radius:30px;overflow:hidden}
+.chat-top{background:#1f3b34;color:#fff;padding:16px 18px;display:flex;gap:12px;align-items:center}
+.avatar{width:38px;height:38px;border-radius:50%;background:var(--stone);display:grid;place-items:center;font-weight:700;font-size:15px}
+.chat-top b{display:block;font-size:15px}
+.chat-top small{opacity:.75;font-size:12px}
+.chat{padding:16px 12px 20px;display:flex;flex-direction:column;gap:8px;min-height:360px}
+.time-chip{align-self:center;background:#fff8;font-size:11px;padding:3px 10px;border-radius:8px;color:#555;margin-bottom:4px}
+.msg{max-width:82%;padding:9px 12px;border-radius:12px;font-size:14px;line-height:1.4;box-shadow:0 1px 1px #0001;opacity:0;transform:translateY(8px);animation:pop .4s forwards}
+.msg small{display:block;text-align:right;font-size:10px;color:#777;margin-top:2px}
+.in{background:#fff;align-self:flex-start;border-top-left-radius:4px}
+.out{background:#d9fdd3;align-self:flex-end;border-top-right-radius:4px}
+.msg:nth-child(2){animation-delay:.3s}.msg:nth-child(3){animation-delay:1.3s}.msg:nth-child(4){animation-delay:2.3s}.msg:nth-child(5){animation-delay:3.3s}
+@keyframes pop{to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.msg{animation:none;opacity:1;transform:none}}
+.phone-caption{text-align:center;font-size:13px;color:var(--muted);margin-top:16px}
+@media(max-width:860px){.hero .wrap{grid-template-columns:1fr}.hero{padding:44px 0}}
+
+/* sections */
+section{padding:84px 0}
+.section-head{max-width:640px;margin-bottom:44px}
+.section-head h2{font-size:clamp(32px,4.4vw,48px);font-weight:800}
+.section-head p{color:var(--ink-2);margin-top:14px;font-size:18px}
+
+.pains{background:var(--ink);color:#fff}
+.pains .section-head p{color:#c9d0da}
+.pain-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.pain{background:var(--ink-2);border-radius:var(--radius);padding:24px}
+.pain .clock{font-family:"Bricolage Grotesque";font-size:30px;font-weight:800;color:#f0a58f}
+.pain p{color:#dde2e9;margin-top:8px;font-size:16px}
+@media(max-width:900px){.pain-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.pain-grid{grid-template-columns:1fr}}
+
+.services-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:30px}
+.card .num{display:inline-grid;place-items:center;width:40px;height:40px;border-radius:12px;background:var(--stone-soft);color:var(--stone);font-weight:700;margin-bottom:16px}
+.card h3{font-size:26px;font-weight:700}
+.card > p{color:var(--ink-2);margin:10px 0 16px}
+.card ul{list-style:none;display:grid;gap:8px}
+.card li{padding-left:26px;position:relative;font-size:15.5px}
+.card li::before{content:"";position:absolute;left:0;top:7px;width:14px;height:14px;border-radius:50%;background:var(--green-soft);box-shadow:inset 0 0 0 4px var(--green)}
+@media(max-width:760px){.services-grid{grid-template-columns:1fr}}
+
+.steps{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.step-list{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;counter-reset:s}
+.step{counter-increment:s}
+.step::before{content:counter(s);display:block;font-family:"Bricolage Grotesque";font-size:56px;font-weight:800;color:var(--stone);line-height:1}
+.step h3{font-size:21px;margin:12px 0 6px}
+.step p{color:var(--ink-2);font-size:15.5px}
+@media(max-width:860px){.step-list{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.step-list{grid-template-columns:1fr}}
+
+.trades{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.trade{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:22px}
+.trade b{font-family:"Bricolage Grotesque";font-size:20px;display:block;margin-bottom:6px}
+.trade p{font-size:15.5px;color:var(--ink-2)}
+@media(max-width:860px){.trades{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.trades{grid-template-columns:1fr}}
+
+.local{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.areas{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.areas span{background:var(--paper);border:1px solid var(--line);padding:7px 14px;border-radius:999px;font-size:14px}
+.promise{background:var(--stone);color:#fff;border-radius:24px;padding:36px}
+.promise h3{font-size:28px;margin-bottom:16px}
+.promise ul{list-style:none;display:grid;gap:12px}
+.promise li{padding-left:28px;position:relative}
+.promise li::before{content:"\2713";position:absolute;left:0;font-weight:700}
+@media(max-width:860px){.local{grid-template-columns:1fr}}
+
+.faq{max-width:760px}
+details{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:18px 22px;margin-bottom:10px}
+summary{cursor:pointer;font-weight:600;font-size:17px;list-style:none;display:flex;justify-content:space-between;gap:16px}
+summary::after{content:"+";color:var(--stone);font-size:22px;line-height:1}
+details[open] summary::after{content:"\2212"}
+details p{margin-top:10px;color:var(--ink-2)}
+
+.contact{background:var(--ink);color:#fff}
+.contact .wrap{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+.contact h2{font-size:clamp(34px,4.6vw,52px)}
+.contact p{color:#c9d0da;margin:16px 0 26px;font-size:18px}
+form{background:var(--paper);color:var(--ink);border-radius:24px;padding:28px;display:grid;gap:14px}
+label{font-size:14px;font-weight:600;display:grid;gap:6px}
+input,select,textarea{font:inherit;font-size:16px;padding:12px 14px;border:1.5px solid var(--line);border-radius:12px;background:#fff;color:var(--ink)}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--stone)}
+textarea{min-height:96px;resize:vertical}
+.form-note{font-size:13px;color:var(--muted)}
+.direct{display:grid;gap:10px;margin-top:8px}
+.direct a{color:#fff;text-decoration:none;font-weight:600;overflow-wrap:anywhere}
+.contact .wrap>*{min-width:0}
+@media(max-width:860px){.contact .wrap{grid-template-columns:1fr}}
+
+footer{background:#0f1722;color:#8994a3;font-size:14px;padding:28px 0}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+.wa-float{position:fixed;right:18px;bottom:18px;z-index:20;width:58px;height:58px;border-radius:50%;background:#25d366;display:grid;place-items:center;box-shadow:0 10px 24px -6px rgba(0,0,0,.35)}
+.wa-float svg{width:30px;height:30px;fill:#fff}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="logo" href="#top"><span class="logo-mark" aria-hidden="true"></span>Spare Hour</a>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#how">How it works</a>
+      <a href="#faq">Questions</a>
+      <a class="btn btn-primary btn-sm" href="#contact" data-cta="nav">Free 20 min chat</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">AI for Glasgow small businesses</span>
+      <h1>Get your <em>evenings</em> back.</h1>
+      <p class="lead">We set up AI that answers your enquiries, chases your invoices and keeps you showing up on Google and Instagram. You get on with the actual work.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-primary" href="#contact" data-cta="hero">Book a free 20 minute chat</a>
+        <a class="btn btn-ghost js-wa" href="#contact" data-cta="hero-wa">Message us on WhatsApp</a>
+      </div>
+      <p class="hero-note">Glasgow based. Plain English. We come to you.</p>
+    </div>
+    <div>
+      <div class="phone" aria-label="Example: an AI assistant replying to a customer at night">
+        <div class="screen">
+          <div class="chat-top"><div class="avatar">B</div><div><b>Bella's Hair Studio</b><small>online</small></div></div>
+          <div class="chat">
+            <span class="time-chip">Tonight, 11:47 pm</span>
+            <div class="msg in">Hi, any chance of a cut and colour this Saturday? 🙏<small>23:47</small></div>
+            <div class="msg out">Hi Laura! Saturday has 10:30 or 2:15 free. Cut and colour is about 2 hours. Want me to pop you in?<small>23:47</small></div>
+            <div class="msg in">10:30 please!<small>23:48</small></div>
+            <div class="msg out">Done ✅ Booked for Sat 10:30. You'll get a reminder Friday. See you then!<small>23:48</small></div>
+          </div>
+        </div>
+      </div>
+      <p class="phone-caption">An example setup. The owner was asleep for all of this.</p>
+    </div>
+  </div>
+</header>
+
+<section class="pains">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Where does your week actually go?</h2>
+      <p>Most small business owners we talk to aren't short on skill. They're short on hours, because the admin never stops.</p>
+    </div>
+    <div class="pain-grid">
+      <div class="pain"><div class="clock">11 pm</div><p>Still replying to "are you open Sunday?" and "how much for...?"</p></div>
+      <div class="pain"><div class="clock">Sunday</div><p>Writing quotes and invoices at the kitchen table.</p></div>
+      <div class="pain"><div class="clock">30 days</div><p>That invoice is overdue and you haven't had a minute to chase it.</p></div>
+      <div class="pain"><div class="clock">2019</div><p>The last time anyone updated your Google listing or posted on Instagram.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>What we do for you</h2>
+      <p>Four things, set up on the apps you already use. No new system to learn, no jargon.</p>
+    </div>
+    <div class="services-grid">
+      <article class="card">
+        <span class="num">01</span>
+        <h3>Business automation</h3>
+        <p>Hand the repetitive admin to AI so it gets done every time, even when you're busy.</p>
+        <ul>
+          <li>Instant replies to WhatsApp, Instagram and website enquiries</li>
+          <li>Quotes and invoices drafted from a voice note</li>
+          <li>Polite automatic reminders for unpaid invoices</li>
+          <li>Bookings and reminders that cut no-shows</li>
+        </ul>
+      </article>
+      <article class="card">
+        <span class="num">02</span>
+        <h3>Online presence</h3>
+        <p>When someone in Glasgow searches for what you do, you should be the obvious pick.</p>
+        <ul>
+          <li>A fast, mobile friendly website that you own</li>
+          <li>Google Business Profile set up and kept fresh</li>
+          <li>Instagram and Facebook posts planned and written for you</li>
+          <li>Reviews requested automatically after every job</li>
+        </ul>
+      </article>
+      <article class="card">
+        <span class="num">03</span>
+        <h3>Drive sales</h3>
+        <p>Turn the people who already know you into repeat business.</p>
+        <ul>
+          <li>Follow-ups for quotes that went quiet</li>
+          <li>"We miss you" offers to past customers</li>
+          <li>Online ordering or booking straight from your page</li>
+          <li>Simple monthly report: what came in, what worked</li>
+        </ul>
+      </article>
+      <article class="card">
+        <span class="num">04</span>
+        <h3>Bring in new customers</h3>
+        <p>Local ads and content aimed at the streets you actually serve.</p>
+        <ul>
+          <li>Facebook, Instagram and Google ads set to your area</li>
+          <li>Short videos made from your own photos and jobs</li>
+          <li>Every lead captured and answered in minutes</li>
+          <li>Spend capped at whatever you're comfortable with</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="steps" id="how">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>How it works</h2>
+      <p>You don't need to know anything about AI. That's our job.</p>
+    </div>
+    <div class="step-list">
+      <div class="step"><h3>Free chat</h3><p>20 minutes, at your shop or on the phone. You tell us what eats your time.</p></div>
+      <div class="step"><h3>We pick the big wins</h3><p>We find the two or three jobs costing you the most hours and give you a fixed price.</p></div>
+      <div class="step"><h3>We build it</h3><p>Set up on WhatsApp, Gmail, Instagram or whatever you already use. You approve everything before it goes live.</p></div>
+      <div class="step"><h3>We show you</h3><p>A walk-through for you and your staff, and we stay on call if anything needs tweaking.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <h2>What this looks like in your trade</h2>
+      <p>A few examples of setups we can build. Yours will be shaped around how you work.</p>
+    </div>
+    <div class="trades">
+      <div class="trade"><b>Cafés and restaurants</b><p>Table bookings and "what are your hours?" handled on WhatsApp and Instagram, with a reminder the day before.</p></div>
+      <div class="trade"><b>Salons and barbers</b><p>Appointments booked any hour, reminders that cut no-shows, and a nudge to rebook after six weeks.</p></div>
+      <div class="trade"><b>Trades</b><p>Talk through a job in a voice note on the way home. A tidy quote is waiting in your inbox to check and send.</p></div>
+      <div class="trade"><b>Shops and online sellers</b><p>Product listings written for you, stock questions answered, and order updates sent automatically.</p></div>
+      <div class="trade"><b>Cleaners and services</b><p>Enquiries turned into booked visits, with recurring customers invoiced and chased without you lifting a finger.</p></div>
+      <div class="trade"><b>Takeaways</b><p>Order questions answered, offers sent to regulars on quiet nights, and reviews collected after each order.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="steps">
+  <div class="wrap local">
+    <div>
+      <div class="section-head" style="margin-bottom:0">
+        <h2>Local, and happy to pop in</h2>
+        <p>We're based in Glasgow and work with businesses across the city. We'd rather sit down with you for twenty minutes than send you a fifty page proposal.</p>
+      </div>
+      <div class="areas">
+        <span>City Centre</span><span>Southside</span><span>West End</span><span>East End</span><span>Merchant City</span><span>Govan</span><span>Partick</span><span>Paisley</span><span>Clydebank</span><span>Rutherglen</span><span>East Kilbride</span><span>Bearsden</span>
+      </div>
+    </div>
+    <div class="promise">
+      <h3>Our promise</h3>
+      <ul>
+        <li>A fixed price agreed before any work starts</li>
+        <li>Nothing goes live until you've seen it and said yes</li>
+        <li>Your accounts and your data stay yours</li>
+        <li>No long contracts</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap faq">
+    <div class="section-head"><h2>Questions people ask us</h2></div>
+    <details><summary>I'm not great with technology. Is this for me?</summary><p>Yes. Most of the people we help say exactly that. We do the setup, you just use WhatsApp or email like you already do, and we show you anything new in person.</p></details>
+    <details><summary>Will my customers know they're talking to AI?</summary><p>That's your call, and we'll talk it through with you. We usually suggest being upfront, for example "Hi, this is Bella's booking assistant", and making it easy to reach a real person at any point.</p></details>
+    <details><summary>What does it cost?</summary><p>It depends on what you need, so we give you a fixed price after the free chat. Smaller jobs like a Google profile refresh or an auto-reply setup are a one-off fee. Ongoing help like social posts or ads is a simple monthly amount you can stop any time.</p></details>
+    <details><summary>Is my customers' data safe?</summary><p>We build on established tools, keep data in accounts you own, and follow UK GDPR. We'll explain exactly where everything is stored before we switch anything on.</p></details>
+    <details><summary>What if the AI gets something wrong?</summary><p>We set clear limits on what it can say and do. Anything it isn't sure about gets passed to you. You'll see every setup working before it goes live, and we stay on call to adjust it.</p></details>
+    <details><summary>How quickly can it be up and running?</summary><p>Simple setups like instant replies or a Google profile refresh usually take days, not weeks. We'll give you a date when we quote.</p></details>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div>
+      <h2>Book your free 20 minute chat</h2>
+      <p>Tell us a bit about your business and what's eating your time. We'll get back to you within one working day.</p>
+      <div class="direct">
+        <a class="js-wa" href="#contact">WhatsApp: <span class="js-phone">PHONE NUMBER</span></a>
+        <a href="mailto:shahkarkhanuk@gmail.com">shahkarkhanuk@gmail.com</a>
+      </div>
+    </div>
+    <form id="lead-form">
+      <label>Your name<input name="name" required autocomplete="name"></label>
+      <label>Business name and type<input name="business" required placeholder="e.g. Bella's Hair Studio, salon"></label>
+      <label>Best phone or email<input name="contact" required autocomplete="tel"></label>
+      <label>Which area of Glasgow?<input name="area" placeholder="e.g. Shawlands"></label>
+      <label>What would you most like off your plate?
+        <select name="need">
+          <option>Answering messages and enquiries</option>
+          <option>Quotes, invoices and admin</option>
+          <option>Getting found on Google</option>
+          <option>Social media and content</option>
+          <option>Getting more customers</option>
+          <option>Not sure yet</option>
+        </select>
+      </label>
+      <label>Anything else?<textarea name="notes"></textarea></label>
+      <button class="btn btn-primary" type="submit" data-cta="form">Send</button>
+      <p class="form-note">We only use your details to get back to you about your enquiry. <a href="#privacy">Privacy</a></p>
+    </form>
+  </div>
+</section>
+
+<section id="privacy" style="padding:56px 0">
+  <div class="wrap faq">
+    <h2 style="font-size:28px;margin-bottom:14px">Privacy</h2>
+    <p style="color:var(--ink-2);font-size:15.5px">Spare Hour is run by Shahkar Khan, a sole trader based in Glasgow. When you send us your details through this site, a Facebook or Instagram form, WhatsApp or email, we use them only to reply to your enquiry and, if you become a client, to deliver the work. We don't sell or share your details with anyone for marketing. We keep enquiry details for up to 12 months unless you become a client. You can ask us to see, correct or delete your details at any time by emailing <a href="mailto:shahkarkhanuk@gmail.com">shahkarkhanuk@gmail.com</a>. This site may use Meta and Google measurement tags to see which adverts bring visitors. You can also complain to the Information Commissioner's Office at ico.org.uk.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Spare Hour, Glasgow</span>
+    <span>AI automation, websites and local marketing for small businesses · <a href="#privacy">Privacy</a></span>
+  </div>
+</footer>
+
+<a class="wa-float js-wa" href="#contact" aria-label="Message us on WhatsApp"><svg viewBox="0 0 32 32"><path d="M16 3C9 3 3.3 8.6 3.3 15.6c0 2.3.6 4.5 1.8 6.5L3 29l7.1-2c1.9 1 4 1.6 6 1.6 7 0 12.7-5.7 12.7-12.6S23 3 16 3zm0 23.1c-1.9 0-3.8-.5-5.4-1.5l-.4-.2-4.2 1.1 1.1-4.1-.3-.4a10.4 10.4 0 0 1-1.6-5.5C5.2 9.8 10 5.1 16 5.1s10.7 4.7 10.7 10.5S22 26.1 16 26.1zm5.9-7.8c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2l-1 1.2c-.2.2-.4.2-.7.1a8.6 8.6 0 0 1-4.3-3.7c-.3-.6.3-.5.9-1.7.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8s1.2 3.2 1.4 3.5c.2.2 2.4 3.6 5.7 5 2.1.9 2.9 1 4 .8.6-.1 1.9-.8 2.2-1.5.3-.7.3-1.4.2-1.5-.1-.2-.3-.3-.6-.4z"/></svg></a>
+
+<script>
+// ---- EDIT THESE ----
+const PHONE = "";            // e.g. "447700900123" (country code, no + or spaces). Empty = WhatsApp buttons scroll to the form.
+const PHONE_DISPLAY = "";    // e.g. "07700 900123"
+const EMAIL = "shahkarkhanuk@gmail.com";
+// --------------------
+
+const waText = encodeURIComponent("Hi, I saw your ad and I'd like a free 20 minute chat about my business.");
+document.querySelectorAll(".js-wa").forEach(a => {
+  if (PHONE) { a.href = `https://wa.me/${PHONE}?text=${waText}`; a.target = "_blank"; a.rel = "noopener"; }
+});
+document.querySelectorAll(".js-phone").forEach(s => s.textContent = PHONE_DISPLAY || "number coming soon");
+
+// Form: opens the visitor's email app with the details filled in. Swap for Formspree/Tally later if you want submissions without email.
+document.getElementById("lead-form").addEventListener("submit", e => {
+  e.preventDefault();
+  const f = new FormData(e.target);
+  const body = [...f.entries()].map(([k, v]) => `${k}: ${v}`).join("\n");
+  window.location.href = `mailto:${EMAIL}?subject=${encodeURIComponent("Free chat request: " + f.get("business"))}&body=${encodeURIComponent(body)}`;
+  if (window.fbq) fbq("track", "Lead");
+  if (window.gtag) gtag("event", "generate_lead");
+});
+</script>
+</body>
+</html>
