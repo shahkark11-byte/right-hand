@@ -1,5 +1,5 @@
-# Spare Hour
+# Right Hand
 
 AI help for Glasgow small businesses: automation, online presence, sales and new customers.
 
-Live site: https://shahkark11-byte.github.io/spare-hour/
+Live site: https://shahkark11-byte.github.io/right-hand/
