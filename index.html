@@ -120,6 +120,8 @@ nav .btn{padding:10px 18px;font-size:14px;white-space:nowrap}
 .moment time{font-family:"Bricolage Grotesque";font-weight:800;font-size:clamp(44px,6vw,72px);color:var(--accent);display:block}
 .moment h3{font-size:clamp(26px,3vw,36px);margin:6px 0 12px}
 .moment p{color:var(--ink-2);max-width:440px}
+.moment .win{display:inline-block;margin-top:6px;font-size:13px;font-weight:700;color:var(--ok);background:var(--ok-soft);border-radius:999px;padding:3px 10px}
+.moment .win.admin{color:var(--muted);background:var(--paper);border:1px solid var(--line)}
 .progress{position:absolute;bottom:-34px;left:max(16px,calc((100vw - 1160px)/2));display:flex;gap:6px}
 .progress span{width:28px;height:4px;border-radius:2px;background:var(--line);transition:background .3s}
 .progress span.on{background:var(--accent)}
@@ -174,6 +176,8 @@ nav .btn{padding:10px 18px;font-size:14px;white-space:nowrap}
   .moments{min-height:150px}
   .moment{inset:0 16px}
   .moment time{font-size:32px}.moment h3{font-size:20px;margin:0 0 4px}.moment p{font-size:14px;line-height:1.45}
+  .moment time{display:inline-block;vertical-align:middle}
+  .moment .win{font-size:11.5px;margin:0 0 0 10px;padding:2px 8px;vertical-align:middle}
   .progress{display:none}
   .phone{height:min(620px,calc(100svh - 250px));width:auto;aspect-ratio:300/610;border-radius:36px;padding:8px}
   .screen{border-radius:27px}.view{padding:44px 10px 10px;gap:6px}
@@ -259,8 +263,15 @@ nav .btn{padding:10px 18px;font-size:14px;white-space:nowrap}
 .founding p{color:var(--ink-2)}
 .promise{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
 .promise span{font-size:14.5px;font-weight:500;background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:8px 14px}
-@media(max-width:900px){.steps{grid-template-columns:1fr 1fr}}
-@media(max-width:560px){.steps{grid-template-columns:1fr}}
+.audit{margin-top:22px;border-radius:22px;padding:28px 30px}
+.audit h3{font-size:26px;margin:6px 0 18px}
+.audit ol{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.audit li{border-top:2px solid var(--line);padding-top:12px}
+.audit li b{display:block;font-family:"Bricolage Grotesque";font-weight:800;color:var(--accent);font-size:15px;margin-bottom:4px}
+.audit li span{color:var(--ink-2);font-size:15.5px}
+.audit .after{margin-top:20px;color:var(--ink-2);max-width:720px}
+@media(max-width:900px){.steps,.audit ol{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.steps,.audit ol{grid-template-columns:1fr}.audit{padding:22px}}
 
 /* ---------- faq ---------- */
 .faq{max-width:820px}
@@ -429,12 +440,12 @@ body{background:
 <section class="day" id="day">
   <div class="stage">
     <div class="moments">
-      <div class="moment on"><time>8:04am</time><h3>The call you'd have missed.</h3><p>You're <span data-t="busy">mid-cut</span>. The AI picks up, answers in your words, and books them in. You get one line on your phone.</p></div>
-      <div class="moment"><time>10:30am</time><h3>Bookings, without the back and forth.</h3><p>Customers message on WhatsApp or Instagram. It checks your diary, books them in and sends the reminder, so they actually turn up.</p></div>
-      <div class="moment"><time>1:15pm</time><h3>Talk. It writes the quote.</h3><p>Record a voice note between jobs. A tidy, priced quote is waiting for you to check and send.</p></div>
-      <div class="moment"><time>3:00pm</time><h3>It chases the money, politely.</h3><p>A late invoice gets a friendly nudge, then another. You only hear about it when it's paid.</p></div>
-      <div class="moment"><time>6:10pm</time><h3>Happy customers, asked at the right time.</h3><p>A thank-you text goes out after each visit with a link to leave a review. The reviews keep coming without you asking.</p></div>
-      <div class="moment"><time>9:00pm</time><h3>Your whole day, in one text.</h3><p>No logging in to five apps. One message tells you what came in, what went out, and the two things that actually need you.</p></div>
+      <div class="moment on"><time>8:04am</time><span class="win">Catches the customer</span><h3>The call you'd have missed.</h3><p>You're <span data-t="busy">mid-cut</span>. The AI picks up, answers in your words, and books them in. You get one line on your phone.</p></div>
+      <div class="moment"><time>10:30am</time><span class="win">Gets them through the door</span><h3>Bookings, without the back and forth.</h3><p>Customers message on WhatsApp or Instagram. It checks your diary, books them in and sends the reminder, so they actually turn up.</p></div>
+      <div class="moment"><time>1:15pm</time><span class="win">Wins the job</span><h3>Talk. It writes the quote.</h3><p>Record a voice note between jobs. A tidy, priced quote is ready to send while the customer is still keen.</p></div>
+      <div class="moment"><time>3:00pm</time><span class="win admin">Saves you time</span><h3>It chases the money, politely.</h3><p>A late invoice gets a friendly nudge, then another. You only hear about it when it's paid.</p></div>
+      <div class="moment"><time>6:10pm</time><span class="win">Brings them back</span><h3>Happy customers, asked at the right time.</h3><p>A thank-you text goes out after each visit with a link to leave a review. When they're due again, they get a nudge to rebook.</p></div>
+      <div class="moment"><time>9:00pm</time><span class="win admin">Saves you time</span><h3>Your whole day, in one text.</h3><p>No logging in to five apps. One message tells you what came in, what went out, and the two things that actually need you.</p></div>
       <div class="progress"><span class="on"></span><span></span><span></span><span></span><span></span><span></span></div>
     </div>
     <div class="phone"><div class="screen">
@@ -493,7 +504,7 @@ body{background:
         <div class="chat-head"><i>SK</i><div><b>Your assistant</b><small>today</small></div></div>
         <div class="thread">
           <div class="msg in typing st" data-at=".02" data-until=".14"><i></i><i></i><i></i></div>
-          <div class="msg in st" data-at=".14"><b>Today, in one go:</b><ul><li data-t="r1">14 bookings (3 after 6pm)</li><li><span data-t="take">£1,180</span> taken</li><li>2 invoices paid after a reminder</li><li>3 new reviews, all 5★</li></ul></div>
+          <div class="msg in st" data-at=".14"><b>Today, in one go:</b><ul><li data-t="r1">14 bookings (3 after 6pm)</li><li><span data-t="take">£1,180</span> taken</li><li>2 invoices paid after a reminder</li><li>3 new reviews, all 5★</li><li data-t="r5">5 regulars reminded they're due</li></ul></div>
           <div class="msg in typing st" data-at=".32" data-until=".44"><i></i><i></i><i></i></div>
           <div class="msg in st" data-at=".44"><b>2 things need you:</b><ul><li data-t="need1">Mrs Patel wants to move Saturday</li><li data-t="need2">Colour order due Friday</li></ul></div>
           <div class="msg in typing st" data-at=".6" data-until=".7"><i></i><i></i><i></i></div>
@@ -513,7 +524,7 @@ body{background:
       <p>One person for the systems behind your business and the content in front of it.</p>
     </div>
     <div class="svcs">
-      <article class="svc glass dark"><span class="n">01</span><h3>AI that runs your admin</h3><p>Calls answered, bookings and reminders, quotes from voice notes, invoices chased, reviews asked for. Built for you, controlled from your phone.</p><div class="tags"><span>Phone answering</span><span>Bookings</span><span>Quotes and invoices</span><span>Daily report</span></div></article>
+      <article class="svc glass dark"><span class="n">01</span><h3>AI that catches every customer</h3><p>Every call answered and every message replied to in seconds. Bookings with reminders so people turn up, quotes sent while they're still keen, and regulars nudged when they're due back. The admin gets done too.</p><div class="tags"><span>Phone answering</span><span>Bookings</span><span>Quotes</span><span>Rebooking</span><span>Invoices</span></div></article>
       <article class="svc glass dark"><span class="n">02</span><h3>Video editing</h3><p>Send me the clips from your phone. You get back short videos that look professional and sound like you: Reels, TikToks, YouTube Shorts and ads.</p><div class="tags"><span>Reels and TikTok</span><span>YouTube</span><span>Promo videos</span><span>Captions</span></div></article>
       <article class="svc glass dark"><span class="n">03</span><h3>Social media and marketing</h3><p>A posting plan, the posts themselves, your Google profile kept fresh, and local ads aimed at the streets you serve, with every enquiry answered in seconds.</p><div class="tags"><span>Instagram and Facebook</span><span>Google profile</span><span>Local ads</span><span>Monthly report</span></div></article>
     </div>
@@ -605,7 +616,7 @@ body{background:
   <div class="wrap">
     <div class="sec-head">
       <span class="eyebrow">Your numbers, not mine</span>
-      <h2>What is slow admin actually costing you?</h2>
+      <h2>What are missed customers and slow admin costing you?</h2>
       <p>Move the sliders to match your business. Most owners have never added it up.</p>
     </div>
     <div class="calc">
@@ -634,16 +645,27 @@ body{background:
       <h2>You don't need to know anything about AI. That's my job.</h2>
     </div>
     <div class="steps">
-      <div class="step glass"><span class="n">01</span><h3>Free walk-through</h3><p>20 minutes at your place or on the phone. I send you the 3 things I'd automate first, in writing.</p><span class="tag">Free</span></div>
-      <div class="step glass"><span class="n">02</span><h3>One fixed price</h3><p>You get one price for the whole build before any work starts. No hourly surprises.</p><span class="tag">Fixed price</span></div>
-      <div class="step glass"><span class="n">03</span><h3>I build it, you approve it</h3><p>On the WhatsApp, Gmail and Instagram you already use. You see it working before it goes live.</p><span class="tag">Your OK first</span></div>
-      <div class="step glass"><span class="n">04</span><h3>I train you on your phone</h3><p>A walk-through for you and your staff. Then optional monthly care: I keep it running and improve it.</p><span class="tag">Stop any time</span></div>
+      <div class="step glass"><span class="n">01</span><h3>Free walk-through</h3><p>20 minutes at your place or on the phone. We go through your four numbers, and I send you the fix for the weakest one, in writing.</p><span class="tag">Free</span></div>
+      <div class="step glass"><span class="n">02</span><h3>One fixed price</h3><p>One price for the whole build before any work starts. We also write down today's numbers, so we can both see what changed.</p><span class="tag">Fixed price</span></div>
+      <div class="step glass"><span class="n">03</span><h3>I build it, you approve it</h3><p>On the WhatsApp, Gmail and Instagram you already use. I test it again and again, then you try it yourself before it goes live.</p><span class="tag">Your OK first</span></div>
+      <div class="step glass"><span class="n">04</span><h3>I train you on your phone</h3><p>A walk-through for you and your staff. It all sits in your accounts and runs without me. Monthly care is optional: I watch the numbers and fix the next weak spot.</p><span class="tag">Stop any time</span></div>
+    </div>
+    <div class="audit glass">
+      <span class="eyebrow">What the walk-through looks at</span>
+      <h3>Four numbers show where a <span data-t="kind">salon</span> is losing customers.</h3>
+      <ol>
+        <li><b>1 · They find you</b><span data-t="a1">How many new people find you each week, on Instagram, Google or walking past?</span></li>
+        <li><b>2 · They get in touch</b><span data-t="a2">How many of them message or ring to ask?</span></li>
+        <li><b>3 · They book or buy</b><span data-t="a3">How many book and actually turn up?</span></li>
+        <li><b>4 · They come back</b><span data-t="a4">How many come back within two months?</span></li>
+      </ol>
+      <p class="after">The weakest of the four is where your money leaks, so that's where I start. Speeding up anything else first changes very little. Don't know one of the numbers? Then step one is counting it, so we can both see the difference later.</p>
     </div>
     <div class="founding glass">
       <div><span class="eyebrow">Founding clients</span><h3>The first 5 Glasgow businesses get half-price setup.</h3><p>In return I ask for an honest review and permission to share your results.</p></div>
       <a class="btn" href="#contact" data-cta="offer">Claim a founding spot</a>
     </div>
-    <div class="promise"><span>Fixed price before any work starts</span><span>Nothing goes live without your OK</span><span>Your accounts and data stay yours</span><span>No long contracts</span><span>Runs on the phone you already have</span></div>
+    <div class="promise"><span>Fixed price before any work starts</span><span>Today's numbers written down first</span><span>Nothing goes live without your OK</span><span>Your accounts and data stay yours</span><span>Yours to keep, runs without me</span><span>No long contracts</span><span>Runs on the phone you already have</span></div>
   </div>
 </section>
 
@@ -655,6 +677,7 @@ body{background:
     <details><summary>I'm not great with technology. Is this for me?</summary><p>Yes. Most owners I talk to say exactly that. I do the setup, you keep using your phone like you already do, and I show you anything new in person.</p></details>
     <details><summary>Do you do videos and social media too?</summary><p>Yes. Send me the clips from your phone and I edit them into Reels, TikToks, Shorts or ads. I can also run your posting, your Google profile and local ads, so the people your AI is answering keep coming in.</p></details>
     <details><summary>What does it cost?</summary><p>It depends on what you need, so you get one fixed price after the free walk-through. Smaller jobs, like a Google profile refresh or auto-replies, are a one-off fee. Ongoing help is a simple monthly amount you can stop any time.</p></details>
+    <details><summary>Will I be stuck needing you?</summary><p>No. Everything I build lives in your own accounts and keeps running if you stop paying me. You'd only pay the tools' own monthly fees, and I show you those before we start.</p></details>
     <details><summary>What if the AI gets something wrong?</summary><p>I set clear limits on what it can say and do. Anything it isn't sure about comes to you. And I stay on call to adjust it.</p></details>
     <details><summary>Is my customers' data safe?</summary><p>I build on established tools, keep data in accounts you own, and follow UK GDPR. I'll explain exactly where everything is stored before anything is switched on.</p></details>
   </div>
@@ -683,6 +706,7 @@ body{background:
             <option>Bookings and reminders</option>
             <option>Quotes, invoices and admin</option>
             <option>Getting found on Google and reviews</option>
+            <option>Getting customers to come back</option>
             <option>Video editing</option>
             <option>Social media and marketing</option>
             <option>Not sure yet</option>
@@ -942,31 +966,41 @@ const TRADES = {
     bookDone: "Booked ✅ See you Saturday at 11. I'll send a reminder on Friday.",
     note: "Bridal party, four people, trial included", q: [["4 × bridal hair", "£280"], ["1 × trial", "£45"], ["Travel", "£25"]], qTotal: "£350",
     invDesc: "Bridal deposit", inv: "£100", review: "Best colour I've had in years", r1: "14 bookings (3 after 6pm)", take: "£1,180",
-    need1: "Mrs Patel wants to move Saturday", need2: "Colour order due Friday"},
+    need1: "Mrs Patel wants to move Saturday", need2: "Colour order due Friday", r5: "5 regulars reminded they're due",
+    kind: "salon", a1: "How many new people find you each week, on Instagram, Google or walking past?", a2: "How many of them message or ring to ask?",
+    a3: "How many book and actually turn up?", a4: "How many come back within two months?"},
   takeaway: {biz: "Clydeside Curry Co", bizIni: "CC", busy: "slammed with the lunch rush", cust: "Callum", svc: "collection order",
     bookQ: "Hiya, can I order for collection at 7?", bookA: "Course! What would you like? Our curries come mild, medium or hot.", bookC: "Chicken tikka masala, medium, and a garlic naan",
     bookDone: "Done ✅ £14.15, ready at 7pm. Pay when you collect.",
     note: "Office lunch Friday, twenty people, delivered", q: [["20 × curry and rice", "£190"], ["20 × naan", "£40"], ["Delivery", "£0"]], qTotal: "£230",
     invDesc: "Office catering", inv: "£230", review: "Roasting hot and bang on time", r1: "86 orders (31 by phone)", take: "£1,940",
-    need1: "Low on lamb for tomorrow", need2: "Catering order to confirm"},
+    need1: "Low on lamb for tomorrow", need2: "Catering order to confirm", r5: "12 regulars sent Friday's offer",
+    kind: "takeaway", a1: "How many people see you on Google, the delivery apps or the street each week?", a2: "How many ring or message to order, and how many calls get missed in the rush?",
+    a3: "How many orders get paid for and collected?", a4: "How many order again within a month?"},
   trades: {biz: "McLean Plumbing", bizIni: "MP", busy: "under a sink", cust: "Mrs Ahmed", svc: "boiler service",
     bookQ: "Hi, could someone look at my boiler this week?", bookA: "Yes, we can do Thursday 8–10am or Friday 1–3pm. Which suits?", bookC: "Thursday morning please",
     bookDone: "Booked ✅ Thursday 8–10am. We'll text when we're on the way.",
     note: "Bathroom refit in Shawlands, three days, fittings and waste", q: [["Labour, 3 days", "£900"], ["Fittings", "£340"], ["Waste removal", "£60"]], qTotal: "£1,300",
     invDesc: "Leak repair", inv: "£180", review: "Turned up exactly when he said he would", r1: "9 jobs booked", take: "£2,310",
-    need1: "Quote for the Byres Road flat", need2: "Van MOT on Monday"},
+    need1: "Quote for the Byres Road flat", need2: "Van MOT on Monday", r5: "3 boiler services due, reminders sent",
+    kind: "trades business", a1: "How many people see your van, your Google page or hear your name each week?", a2: "How many ask you for a quote?",
+    a3: "How many say yes to the quote?", a4: "How many call you again, or pass your name on?"},
   shop: {biz: "Kelvin Gift Shop", bizIni: "KG", busy: "serving a queue", cust: "Ruth", svc: "click and collect",
     bookQ: "Hi, have you got the tweed purse in green?", bookA: "We do, 2 left in green. Want me to keep one for you to collect?", bookC: "Yes please, tomorrow",
     bookDone: "Saved ✅ It's behind the counter for you tomorrow.",
     note: "Corporate gifts, thirty hampers, delivered next month", q: [["30 × hamper", "£1,050"], ["Gift cards", "£60"], ["Delivery", "£40"]], qTotal: "£1,150",
     invDesc: "Trade order", inv: "£320", review: "Lovely wee shop, so helpful", r1: "41 orders (12 online)", take: "£1,620",
-    need1: "Green purse nearly sold out", need2: "Supplier invoice due Friday"},
+    need1: "Green purse nearly sold out", need2: "Supplier invoice due Friday", r5: "20 past buyers told about new stock",
+    kind: "shop", a1: "How many people walk in or visit your page each week?", a2: "How many ask about something?",
+    a3: "How many buy?", a4: "How many come back within a couple of months?"},
   clinic: {biz: "Southside Physio", bizIni: "SP", busy: "with a patient", cust: "David", svc: "back assessment",
     bookQ: "Hi, can I book a back assessment?", bookA: "Of course. We have Tuesday 9:30 or Wednesday 5pm. Which suits?", bookC: "Wednesday at 5",
     bookDone: "Booked ✅ Wednesday 5pm. A form to fill in is on its way.",
     note: "Six-session treatment plan for David", q: [["Assessment", "£55"], ["5 × follow-up", "£225"], ["Exercise plan", "£0"]], qTotal: "£280",
     invDesc: "Treatment plan", inv: "£280", review: "Back moving again after two sessions", r1: "18 appointments", take: "£1,060",
-    need1: "Two cancellations to fill", need2: "Insurance claim to sign"},
+    need1: "Two cancellations to fill", need2: "Insurance claim to sign", r5: "4 patients reminded to book a follow-up",
+    kind: "clinic", a1: "How many people find you on Google, through a referral or on social each week?", a2: "How many get in touch to ask?",
+    a3: "How many book and turn up for the first session?", a4: "How many finish their plan, or come back next time?"},
 };
 function setTrade(key) {
   const t = TRADES[key];
