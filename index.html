@@ -194,6 +194,13 @@ nav .btn{padding:10px 18px;font-size:14px;white-space:nowrap}
 .svc .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding-top:10px}
 .svc .tags span{font-size:12.5px;background:rgba(255,255,255,.1);border-radius:999px;padding:4px 10px;color:#e4ebf3}
 @media(max-width:900px){.svcs{grid-template-columns:1fr}}
+.kits{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.kit .top{display:flex;flex-wrap:wrap;gap:6px}
+.kit .win{font-size:12px;font-weight:700;color:var(--ok);background:var(--ok-soft);border-radius:999px;padding:4px 10px}
+.kit .win.admin{color:var(--muted);background:var(--paper);border:1px solid var(--line)}
+.kits-cta{margin-top:22px;display:flex;flex-wrap:wrap;align-items:center;gap:14px 20px;color:var(--ink-2)}
+@media(max-width:1120px){.kits{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.kits{grid-template-columns:1fr}}
 
 /* ---------- three questions ---------- */
 .qs{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
@@ -531,6 +538,24 @@ body{background:
   </div>
 </section>
 
+<!-- ======================= READY-MADE SYSTEMS ======================= -->
+<section class="sec" id="systems" style="padding-bottom:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Ready-made systems</span>
+      <h2>Four systems I've already built. I set them up in your business.</h2>
+      <p>Each one works today on my own computer. Pick one, or have all four, and I connect it to the phone, calendar and files you already use.</p>
+    </div>
+    <div class="kits">
+      <article class="w glass kit"><div class="top"><span class="status">Working demo</span><span class="win">Gets you seen</span></div><h3>Posts that sound like you</h3><p>Send me 20 to 30 of your old posts. Each week it drafts new posts, a short video script and emails in your voice, with a score for how close they sound to you. Nothing goes out until you approve it.</p><div class="tags"><span>Instagram and Facebook</span><span>Video scripts</span><span>Email sequence</span><span>Quiz</span></div></article>
+      <article class="w glass kit"><div class="top"><span class="status">Working demo</span><span class="win">Catches the customer</span></div><h3>From enquiry to paid booking</h3><p>Someone fills in your form. They get the payment link, then the forms to sign, then a time to book, with polite reminders at every step. You see who paid and which post brought them in.</p><div class="tags"><span>Payment link</span><span>Forms and waiver</span><span>Booking</span><span>Reminders</span></div></article>
+      <article class="w glass kit"><div class="top"><span class="status">Working demo</span><span class="win admin">Saves you time</span></div><h3>Paperwork from a voice note</h3><p>Talk for a minute at the end of the day. It fills in the form, puts your logo on it and files it under the right job, marked draft until you sign it. Anything you didn't say is flagged, never guessed.</p><div class="tags"><span>Site registers</span><span>Risk assessments</span><span>Job reports</span><span>Sign-off</span></div></article>
+      <article class="w glass kit"><div class="top"><span class="status">Working demo</span><span class="win admin">Saves you time</span></div><h3>Ask your own files</h3><p>Type a question like "how long does that supplier take?" and get the answer with the file it came from. If it isn't in your files, it says so. Each morning it sends a short note of what's due today.</p><div class="tags"><span>Your documents</span><span>Meeting notes</span><span>Morning note</span><span>Stays private</span></div></article>
+    </div>
+    <div class="kits-cta"><a class="btn" href="#contact" data-cta="systems">See one working</a><span>I'll show you any of the four on the free walk-through.</span></div>
+  </div>
+</section>
+
 <!-- ======================= THREE QUESTIONS ======================= -->
 <section class="sec" id="questions">
   <div class="wrap">
@@ -707,6 +732,8 @@ body{background:
             <option>Quotes, invoices and admin</option>
             <option>Getting found on Google and reviews</option>
             <option>Getting customers to come back</option>
+            <option>Paperwork from voice notes</option>
+            <option>Finding things in our own files</option>
             <option>Video editing</option>
             <option>Social media and marketing</option>
             <option>Not sure yet</option>
