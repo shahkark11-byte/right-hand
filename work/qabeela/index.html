@@ -15,6 +15,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://lh3.googleusercontent.com" crossorigin>
+<link rel="preconnect" href="https://images.pexels.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Manrope:wght@400;500;600;700&family=Noto+Naskh+Arabic:wght@600&display=swap" rel="stylesheet">
 <script>document.documentElement.classList.add('js');</script>
 <style>
@@ -367,11 +368,6 @@ body.modal-open .sbar{display:none}
   *,*::before,*::after{transition-duration:.01ms!important;scroll-behavior:auto!important}
   #embers{display:none}
 }
-/* phones: frame the lit sign in the top half, fade into charcoal under the headline */
-@media(max-width:899px){
-  .hero-img{top:-30%;bottom:auto;height:96%;object-position:34% 50%;transform-origin:34% 55%}
-  .hero::before{background:linear-gradient(to top,var(--char) 0%,var(--char) 52%,rgba(20,17,15,.9) 60%,rgba(20,17,15,.35) 70%,rgba(20,17,15,0) 76%,rgba(20,17,15,0) 88%,rgba(20,17,15,.6) 100%)}
-}
 </style>
 </head>
 <body id="top">
@@ -392,7 +388,8 @@ body.modal-open .sbar{display:none}
 <main>
 <section class="hero" aria-label="Welcome">
   <picture>
-  <img class="hero-img" src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9Q9rcwyQ0lXG7Y8NwTqi_4KJpRe_UqyqFAp9o9sKZ4Ox54F1iErAhHgnBG9sPkPf_HmFXpd7Y1DdS3vl20ppD3opjHYr15HPtp8J8rR2xngOxdm_XsO78bfrFtQHWuLq19w_5Fjb0ZoA4w=w800" srcset="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9Q9rcwyQ0lXG7Y8NwTqi_4KJpRe_UqyqFAp9o9sKZ4Ox54F1iErAhHgnBG9sPkPf_HmFXpd7Y1DdS3vl20ppD3opjHYr15HPtp8J8rR2xngOxdm_XsO78bfrFtQHWuLq19w_5Fjb0ZoA4w=w800 800w, https://lh3.googleusercontent.com/gps-cs-s/ANWiy9Q9rcwyQ0lXG7Y8NwTqi_4KJpRe_UqyqFAp9o9sKZ4Ox54F1iErAhHgnBG9sPkPf_HmFXpd7Y1DdS3vl20ppD3opjHYr15HPtp8J8rR2xngOxdm_XsO78bfrFtQHWuLq19w_5Fjb0ZoA4w=w1600 1600w" sizes="100vw" alt="Qabeela Shinwari at night, the lit sign above the glass front on Burnbank Road" fetchpriority="high" decoding="async">
+  <source media="(max-width: 899px)" srcset="https://images.pexels.com/photos/37924340/pexels-photo-37924340.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800 800w, https://images.pexels.com/photos/37924340/pexels-photo-37924340.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600 1600w" sizes="100vw">
+  <img class="hero-img" src="https://images.pexels.com/photos/17138061/pexels-photo-17138061.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" srcset="https://images.pexels.com/photos/17138061/pexels-photo-17138061.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800 800w, https://images.pexels.com/photos/17138061/pexels-photo-17138061.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600 1600w" sizes="100vw" alt="Lamb on skewers cooking over glowing charcoal" fetchpriority="high" decoding="async">
   </picture>
   <canvas id="embers" aria-hidden="true"></canvas>
   <div class="wrap hero-wrap">
