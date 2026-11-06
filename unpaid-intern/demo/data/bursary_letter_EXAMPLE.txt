@@ -1,0 +1,13 @@
+EXAMPLE LETTER (made up for the demo)
+From: Example College, Student Funding
+Subject: Your bursary award 2026-27
+Date: 1 September 2026
+
+Dear student,
+
+You have been awarded a bursary of £125.55 a week.
+It is paid every two weeks, £251.10 each time, if your attendance is confirmed.
+
+Payment dates this term: 9 October 2026, 23 October 2026, 6 November 2026, 20 November 2026.
+
+If a payment does not arrive, contact Student Funding.

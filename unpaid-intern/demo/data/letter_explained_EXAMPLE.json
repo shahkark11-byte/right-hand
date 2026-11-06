@@ -1,0 +1,30 @@
+{
+  "note": "Plain-language explanation of letter_EXAMPLE.txt. Written by the planner; the owner checks the Pashto, Urdu and Arabic before any real use.",
+  "checked_by_owner": false,
+  "languages": [
+    { "code": "en", "label": "English", "dir": "ltr", "lines": [
+      "This is a Council Tax reminder from your council.",
+      "They want £142.00 by 20 November 2026.",
+      "If you miss it, they may ask you to pay the rest of the year's Council Tax in one go.",
+      "If paying is hard, contact them. You may be able to get help."
+    ] },
+    { "code": "ps", "label": "پښتو", "dir": "rtl", "lines": [
+      "دا ستاسو د کونسل له خوا د کونسل ټیکس یادونه ده.",
+      "دوی غواړي چې تر 20 نومبر 2026 پورې £142.00 ورکړئ.",
+      "که دا نېټه تېره شي، کېدای شي له تاسو وغواړي چې د ټول کال پاتې کونسل ټیکس په یو ځل ورکړئ.",
+      "که ورکول درته ګران وي، له دوی سره اړیکه ونیسئ. کېدای شي مرسته درکړل شي."
+    ] },
+    { "code": "ur", "label": "اردو", "dir": "rtl", "lines": [
+      "یہ آپ کی کونسل کی طرف سے کونسل ٹیکس کی یاد دہانی ہے۔",
+      "وہ 20 نومبر 2026 تک £142.00 چاہتے ہیں۔",
+      "اگر یہ تاریخ گزر گئی تو وہ آپ سے پورے سال کا باقی کونسل ٹیکس ایک ساتھ مانگ سکتے ہیں۔",
+      "اگر ادائیگی مشکل ہو تو ان سے رابطہ کریں۔ آپ کو مدد مل سکتی ہے۔"
+    ] },
+    { "code": "ar", "label": "العربية", "dir": "rtl", "lines": [
+      "هذه رسالة تذكير بضريبة المجلس (Council Tax) من مجلسك المحلي.",
+      "يطلبون دفع 142.00 جنيهًا إسترلينيًا قبل 20 نوفمبر 2026.",
+      "إذا فاتك هذا الموعد، فقد يطلبون منك دفع باقي ضريبة السنة كاملةً دفعةً واحدة.",
+      "إذا كان الدفع صعبًا، تواصل معهم. قد تحصل على مساعدة."
+    ] }
+  ]
+}

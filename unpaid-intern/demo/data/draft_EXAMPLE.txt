@@ -1,0 +1,19 @@
+EXAMPLE DRAFT (made up for the demo)
+
+Negligence in Scots law
+
+Negligence is part of the law of delict. It deals with harm caused by carelessness rather than by intention. For a pursuer to succeed against a defender, the pursuer has to show that the defender owed them a duty of care, that the defender breached that duty, and that the breach caused loss which the law will compensate.
+
+Duty of care
+
+The starting point is Donoghue v Stevenson 1932 SC (HL) 31. Mrs Donoghue drank ginger beer from an opaque bottle bought for her by a friend. She said the bottle contained a decomposed snail and that she became ill. The House of Lords held that a manufacturer owed a duty of care to the final consumer, even without a contract between them. Lord Atkin set out the neighbour principle: you must take reasonable care to avoid acts or omissions which you can reasonably foresee would be likely to injure your neighbour. Your neighbour is anyone so closely and directly affected by your act that you ought to have them in mind.
+
+The neighbour principle is still the foundation of the duty of care, although later cases have added more structure, especially where the loss is purely economic or the harm is psychiatric.
+
+Breach of duty
+
+Once a duty exists, the next question is whether the defender fell below the standard of care. The standard is that of the reasonable person. In Muir v Glasgow Corporation 1943 SC (HL) 3, a tea urn was being carried through a tearoom and children were scalded when it was dropped. The House of Lords held that the manageress had not been negligent, because the accident was not reasonably foreseeable. The test is objective: the court asks what a reasonable person in the defender's position would have foreseen and done, not what this particular defender thought.
+
+Factors the courts look at include how likely harm was, how serious it would be, how costly it would have been to prevent it, and the social value of the defender's activity. A defender who takes reasonable precautions is not liable just because an accident happened.
+
+To be continued.

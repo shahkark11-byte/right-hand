@@ -1,0 +1,15 @@
+EXAMPLE LETTER (made up for the demo)
+From: Your Council, Council Tax Office
+Subject: Council Tax reminder notice
+Date: 3 November 2026
+Account: CT-000000
+
+Dear resident,
+
+Our records show that your Council Tax instalment of £142.00 for November has not been paid.
+
+Please pay £142.00 by 20 November 2026. If you pay by then, your instalments carry on as normal.
+
+If you do not pay by 20 November 2026, the council may ask you to pay the rest of the year's Council Tax in one go.
+
+If you are having trouble paying, contact us. You may be able to get help.

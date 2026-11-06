@@ -1,0 +1,145 @@
+/* Design tokens: the golden-ratio design system (see ../../DESIGN_SYSTEM.md).
+   Every size, gap, radius, duration and colour in components.css comes from here. */
+
+:root {
+  /* Type: each step is the square root of phi, so every second step is exactly phi (base 16 px) */
+  --fs-0: .625rem;     /* 10   legal footnotes only */
+  --fs-1: .78125rem;   /* 12.5 mono labels, captions */
+  --fs-2: 1rem;        /* 16   body */
+  --fs-3: 1.25rem;     /* 20   card titles */
+  --fs-4: 1.625rem;    /* 26   section titles */
+  --fs-5: 2.0625rem;   /* 33   screen titles */
+  --fs-7: 3.3125rem;   /* 53   big figures */
+  --fs-8: 4.25rem;     /* 68   the money figure on Progress */
+  --lh-body: 1.618;
+  --lh-head: 1.236;    /* phi - 0.382 */
+  --lh-mono: 1.382;
+  --measure: 42rem;    /* the golden reading width, (16 x phi)^2 px */
+
+  /* Space: Fibonacci only (px) */
+  --s-1: 3px;
+  --s-2: 5px;
+  --s-3: 8px;
+  --s-4: 13px;
+  --s-5: 21px;
+  --s-6: 34px;
+  --s-7: 55px;
+  --s-8: 89px;
+  --s-9: 144px;
+  --s-10: 233px;
+  --s-11: 377px;
+
+  /* Shape */
+  --r-1: 8px;          /* chips, inputs */
+  --r-2: 13px;         /* cards */
+  --r-3: 21px;         /* sheets, the brief card, bubbles */
+  --r-pill: 999px;
+  --shadow: 0 3px 13px rgba(31, 43, 18, .08);
+  --tap: 44px;         /* smallest comfortable touch target */
+  --phone-w: 390px;
+  --phone-h: 844px;
+
+  /* Ollie: Fibonacci sizes (px) */
+  --o-1: 34px;         /* chat avatar */
+  --o-2: 55px;         /* beside headings */
+  --o-3: 89px;         /* walkway and jury */
+  --o-4: 144px;        /* report hero, the brief */
+  --o-5: 233px;        /* splash */
+
+  /* Motion: Fibonacci milliseconds, two easings */
+  --t-micro: 89ms;     /* taps, toggles */
+  --t-small: 144ms;    /* fades, chips */
+  --t-std: 233ms;      /* screens, sheets */
+  --t-large: 377ms;    /* pose changes, the brief arriving */
+  --t-slow: 610ms;
+  --t-long: 987ms;
+  --t-xl: 1597ms;
+  --t-amb-a: 3770ms;   /* breathing */
+  --t-amb-b: 6100ms;   /* sway */
+  --t-story: 5s;       /* one story slide */
+  --t-wait: 34s;       /* the live jury's progress line */
+  --ease: cubic-bezier(.382, 0, .236, 1);
+  --spring: cubic-bezier(.34, 1.618, .64, 1);
+
+  /* Fonts */
+  --head: 'Fredoka', system-ui, sans-serif;
+  --serif: 'Instrument Serif', Georgia, 'Times New Roman', serif;
+  --body: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --mono: 'JetBrains Mono', ui-monospace, 'Cascadia Mono', Consolas, monospace;
+
+  /* Colour: about 61.8% cream and paper, 23.6% olive and ink, 14.6% accents */
+  --ink: #16181D;
+  --cream: #F6F1E3;
+  --paper: #FBFAF7;
+  --deep: #1F2B12;
+  --olive: #5E7A2E;
+  --leaf: #8FA84A;
+  --ollie: #93AE3C;    /* Ollie green */
+  --fresh: #309D4B;    /* working */
+  --gold: #E3A51F;     /* money */
+  --alert: #C8442B;    /* needs your eye */
+
+  --page: #E4DEC9;
+  --bg: var(--cream);
+  --surface: var(--paper);
+  --line: #E3DCCB;
+  --text: var(--ink);
+  --muted: #5B6152;
+  --accent: var(--deep);
+  --accent-text: var(--paper);
+  --alert-ink: var(--alert);
+  --ok-ink: #2E7D32;
+  --bubble-ollie: var(--paper);
+  --bubble-me: var(--deep);
+  --bubble-me-text: var(--cream);
+  --toast-bg: var(--deep);
+  --toast-text: var(--cream);
+  --scrim: rgba(22, 24, 29, .5);
+  --on-deep: #F6F1E3;
+  --on-deep-soft: rgba(246, 241, 227, .86);
+  --on-deep-faint: rgba(246, 241, 227, .12);
+  --on-deep-line: rgba(246, 241, 227, .32);
+  --deep-label: #A9C25B;
+  --strip: #16181D;
+  --walkie: #14171C;
+
+  /* The olive tree drawing */
+  --outline: #2B3416;
+  --olive-green: #7FA13A;
+  --olive-black: #26272B;
+  --canopy: #8FA84A;
+  --canopy-hi: #A9C25B;
+}
+
+[data-theme="dark"] {
+  --page: #0A0D06;
+  --bg: #11160B;
+  --surface: #1A2210;
+  --line: rgba(246, 241, 227, .14);
+  --text: var(--cream);
+  --muted: #B6BBA8;
+  --deep: #26331A;
+  --accent: #A9C25B;
+  --accent-text: #11160B;
+  --alert-ink: #F08A73;
+  --ok-ink: #8FD694;
+  --bubble-ollie: var(--surface);
+  --bubble-me: #3A4B22;
+  --bubble-me-text: #F6F1E3;
+  --toast-bg: #F6F1E3;
+  --toast-text: #1F2B12;
+  --strip: #0A0D06;
+  --outline: #F6F1E3;
+  --olive-black: #3A3C42;
+}
+
+/* Large text: only the body size grows, as before */
+[data-size="large"] { --fs-2: 1.1875rem; }
+
+/* Reduced motion: every duration collapses; looping animations are switched off in components.css */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --t-micro: 1ms; --t-small: 1ms; --t-std: 1ms; --t-large: 1ms; --t-slow: 1ms; --t-long: 1ms; --t-xl: 1ms;
+    --t-amb-a: 1ms; --t-amb-b: 1ms; --t-story: 1ms; --t-wait: 1ms;
+  }
+}

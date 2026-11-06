@@ -1,0 +1,5 @@
+name,for,max_amount,opens,closes,link
+Example Community Fund,charity|school,5000,2026-10-01,2026-11-28,https://example.org/community-fund
+Example Small Business Grant,business,2000,2026-09-01,2026-11-14,https://example.org/small-business
+Example Arts Fund,charity,3000,2026-12-01,2027-01-31,https://example.org/arts
+Example Youth Fund,school|charity,1500,2026-08-01,2026-10-31,https://example.org/youth

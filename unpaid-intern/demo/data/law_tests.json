@@ -1,0 +1,25 @@
+{
+  "note": "Starter Scots law test set, written by the planner from authorities checked on legislation.gov.uk and the law reports (5-6 Nov 2026). Format copied from Harvey LAB: each question has a rubric; an answer passes only if every item passes. 'all' = every phrase must appear; 'any' = at least one of the phrases; 'none' = none may appear. Matching ignores case.",
+  "questions": [
+    { "id": "salomon", "q": "Is a company a separate legal person from its members? Name the leading case with its citation.",
+      "rubric": [ { "all": ["Salomon"] }, { "all": ["[1897] AC 22"] }, { "none": ["1987"] } ] },
+    { "id": "one-director", "q": "Can a private limited company in Scotland have only one director? Give the statutory section.",
+      "rubric": [ { "all": ["Companies Act 2006"] }, { "any": ["s154", "section 154"] } ] },
+    { "id": "scots-partnership", "q": "Is a partnership in Scotland a legal person? Give the statute and section.",
+      "rubric": [ { "all": ["Partnership Act 1890"] }, { "any": ["s4(2)", "section 4(2)"] } ] },
+    { "id": "llp-members", "q": "How many members are needed to incorporate an LLP? Give the statute.",
+      "rubric": [ { "all": ["Limited Liability Partnerships Act 2000"] }, { "any": ["two or more", "2 or more", "at least two", "at least 2"] } ] },
+    { "id": "hedley", "q": "When can a careless statement lead to liability in delict? Name the leading case with its citation.",
+      "rubric": [ { "all": ["Hedley Byrne"] }, { "all": ["[1964] AC 465"] }, { "any": ["rel"] } ] },
+    { "id": "immigration-advice", "q": "Can an unqualified company give immigration advice in the UK? Give the statute and section.",
+      "rubric": [ { "all": ["Immigration and Asylum Act 1999"] }, { "any": ["s84", "section 84"] }, { "any": ["qualified"] } ] },
+    { "id": "director-guilty", "q": "If a company commits the offence of giving unlawful immigration advice, can its director be guilty too? Give the section.",
+      "rubric": [ { "any": ["s91(3)", "section 91(3)"] }, { "any": ["consent", "connivance", "neglect"] } ] },
+    { "id": "pecr-sole-trader", "q": "Can a business send a marketing email to a sole trader who never consented? Give the regulation.",
+      "rubric": [ { "any": ["reg 22", "regulation 22"] }, { "all": ["consent"] }, { "any": ["Privacy and Electronic Communications", "PECR"] } ] },
+    { "id": "pecr-scots-partnership", "q": "Under the Privacy and Electronic Communications Regulations 2003, is a Scottish partnership a corporate subscriber?",
+      "rubric": [ { "any": ["yes"] }, { "any": ["reg 2", "regulation 2"] }, { "any": ["partnership in Scotland", "Scottish partnership"] } ] },
+    { "id": "deposit", "q": "A Scottish landlord never protected a tenant's deposit. How long after the tenancy ends can the tenant apply to the tribunal, and what must the tribunal order?",
+      "rubric": [ { "any": ["3 months", "three months"] }, { "any": ["three times", "3 times", "up to 3x"] }, { "any": ["Tenancy Deposit Schemes (Scotland) Regulations 2011"] } ] }
+  ]
+}

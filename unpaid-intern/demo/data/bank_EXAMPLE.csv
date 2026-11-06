@@ -1,0 +1,11 @@
+date,merchant,amount,category
+2026-08-02,CloudBox Storage,7.99,cloud storage
+2026-09-02,CloudBox Storage,7.99,cloud storage
+2026-10-02,CloudBox Storage,7.99,cloud storage
+2026-08-05,DriveVault,5.99,cloud storage
+2026-09-05,DriveVault,5.99,cloud storage
+2026-10-05,DriveVault,5.99,cloud storage
+2026-08-10,BookKeep Pro,18.00,accounting
+2026-09-10,BookKeep Pro,18.00,accounting
+2026-10-10,BookKeep Pro,30.00,accounting
+2026-10-12,Tesco,42.10,groceries

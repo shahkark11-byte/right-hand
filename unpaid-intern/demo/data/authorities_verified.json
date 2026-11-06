@@ -1,0 +1,11 @@
+{
+  "note": "Authorities checked by the planner against legislation.gov.uk and the law reports on 6 Nov 2026 (the same ones used on the class-task website). Only these count as verified in the demo.",
+  "authorities": [
+    { "kind": "case", "name": "Salomon v A Salomon & Co Ltd", "cite": "[1897] AC 22", "principle": "a company is a separate legal person from its members" },
+    { "kind": "case", "name": "Hedley Byrne & Co Ltd v Heller & Partners Ltd", "cite": "[1964] AC 465", "principle": "a duty of care can arise for a careless statement where the maker assumes responsibility and the other party reasonably relies on it" },
+    { "kind": "act", "name": "Partnership Act 1890", "cite": "s4(2)", "principle": "in Scotland a firm is a legal person distinct from its partners" },
+    { "kind": "act", "name": "Limited Liability Partnerships Act 2000", "cite": "s2(1)(a)", "principle": "two or more persons must subscribe the incorporation document" },
+    { "kind": "act", "name": "Companies Act 2006", "cite": "s154(1)", "principle": "a private company must have at least one director" },
+    { "kind": "act", "name": "Companies Act 2006", "cite": "ss171-177", "principle": "directors must act within powers, promote the company's success, use independent judgment and reasonable care, and avoid conflicts" }
+  ]
+}

@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Unpaid Intern · demo</title>
+  <link rel="icon" href="assets/icon.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&family=Inter:wght@400;500&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+  <div class="topnote">Demo · example data</div>
+
+  <div class="phone">
+    <header class="appbar" id="appbar" hidden>
+      <button class="iconbtn" id="menuBtn" aria-label="Open your sessions" hidden>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+      <button class="iconbtn" id="backBtn" aria-label="Back" hidden>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
+      </button>
+      <button class="appbar-title" id="appbarTitle" type="button">Unpaid Intern</button>
+      <button class="iconbtn" id="newBtn" aria-label="New session" hidden>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+      </button>
+      <button class="iconbtn" id="gearBtn" aria-label="Settings">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 3v2.5M12 18.5V21M3 12h2.5M18.5 12H21M5.6 5.6l1.8 1.8M16.6 16.6l1.8 1.8M5.6 18.4l1.8-1.8M16.6 7.4l1.8-1.8"/></svg>
+      </button>
+    </header>
+    <p class="offline" id="offlineNote" role="status" hidden>You're offline. Everything on the phone still works; the jury will use recorded answers.</p>
+
+    <main class="screens" id="screens">
+
+      <!-- Splash -->
+      <section class="screen" data-screen="splash">
+        <button class="splash-tap" id="wakeBtn" aria-label="Tap to wake your intern">
+          <span class="ollie big p1" id="splashOllie" data-state="sleep" role="img" aria-label="Ollie the olive, fast asleep"></span>
+          <span class="logo" role="img" aria-label="Unpaid Intern logo"></span>
+          <span class="splash-cta">Tap to wake your intern</span>
+        </button>
+      </section>
+
+      <!-- Getting to know you -->
+      <section class="screen chat" data-screen="chat" hidden>
+        <div class="thread" id="chatThread" aria-live="polite"></div>
+        <form class="inputbar" id="chatForm" autocomplete="off">
+          <input type="text" id="chatInput" aria-label="Answer Ollie" placeholder="Type or tap the mic to answer">
+          <button class="iconbtn mic" id="chatMic" type="button" aria-label="Speak instead of typing"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0014 0M12 18v3"/></svg></button>
+          <button class="iconbtn send-btn" type="submit" aria-label="Send"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12l16-8-6 17-3-7z"/></svg></button>
+        </form>
+      </section>
+
+      <!-- A session: one chat per job -->
+      <section class="screen sess" id="s-sess" data-screen="sess" hidden>
+        <div class="thread" id="sThread" aria-live="polite"></div>
+        <form class="inputbar" id="sForm" autocomplete="off">
+          <label class="iconbtn clip" aria-label="Add files" title="Add files">
+            <input type="file" id="sFile" multiple accept=".csv,.txt,.md,text/csv,text/plain,text/markdown,.pdf,.doc,.docx">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.5l-8 8a5 5 0 01-7-7l8.5-8.5a3.3 3.3 0 014.7 4.7L9.500 17.200a1.700 1.700 0 01-2.400-2.400l7.600-7.600"/></svg>
+          </label>
+          <input type="text" id="sInput" aria-label="Message Ollie" placeholder="Ask Ollie, or add a file">
+          <button class="iconbtn mic" id="sMic" type="button" aria-label="Speak instead of typing"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0014 0M12 18v3"/></svg></button>
+          <button class="iconbtn walkie-btn" id="sWalkie" type="button" aria-label="Walkie-talkie for this session" title="Walkie-talkie"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="8" width="10" height="13" rx="2"/><path d="M10 8V3M10 12h4M10 16h4"/></svg></button>
+          <button class="iconbtn send-btn" type="submit" aria-label="Send"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12l16-8-6 17-3-7z"/></svg></button>
+        </form>
+        <button class="promise" id="promiseBtn" type="button" aria-label="The Ollie Promise: tap to read it">
+          <span>✓ Nothing sent without you</span><span>✓ Every answer shows its source</span><span>✓ You get the finished thing</span>
+        </button>
+      </section>
+
+      <!-- What Ollie knows -->
+      <section class="screen" data-screen="know" hidden>
+        <p class="mono-cap">OLLIE'S MEMORY</p>
+        <h1 class="serif-h">What Ollie knows about you</h1>
+        <p class="sub">Only what you told me or what I read in your files. Forget anything and I will stop using it.</p>
+        <div id="knowBody"></div>
+        <p class="know-note">You can read and forget all of it.</p>
+      </section>
+
+      <!-- What's new -->
+      <section class="screen" data-screen="news" hidden>
+        <h1>What's new</h1>
+        <div class="stories" id="storyRow" role="group" aria-label="Stories"></div>
+        <h2 class="mini-h">Latest results</h2>
+        <div class="slist" id="newsList"></div>
+      </section>
+
+      <!-- Progress: the olive tree -->
+      <section class="screen" data-screen="report" hidden>
+        <div class="tree-head"><h1 id="treeTitle">Your tree</h1><p class="tiny" id="treeSub"></p></div>
+        <div class="tree-wrap" id="treeHost"></div>
+        <div class="progress" id="progressRow" aria-label="Progress"></div>
+        <div class="bento-grid" id="bento"></div>
+        <p class="footline">Information to help you decide · checked against the sources shown</p>
+      </section>
+
+      <!-- The jury -->
+      <section class="screen" data-screen="jury" hidden>
+        <h1 id="juryTitle">The jury</h1>
+        <div class="walkway jury-walk" aria-hidden="true"><span class="ollie med p7" id="juryOllie" data-state="walk"></span></div>
+        <div class="wait" id="juryWait" role="status" hidden>
+          <p>Thinking… this takes about 30 seconds on this laptop.</p>
+          <span class="wait-bar" aria-hidden="true"></span>
+        </div>
+        <div class="seats" id="seats"></div>
+        <div class="verdict" id="verdict" hidden></div>
+        <p class="disagree" id="disagree" hidden></p>
+        <p class="tiny prov-line" id="juryLabel"></p>
+        <div class="lines-box" id="linesBox" hidden>
+          <h2 class="mini-h">You have the final say</h2>
+          <p class="tiny">Untick a line to take it out of the totals and the draft.</p>
+          <ul class="lines" id="lines"></ul>
+        </div>
+        <div class="argue" id="argue">
+          <h2 class="mini-h">Disagree? Tell the jury</h2>
+          <div class="field">
+            <input type="text" id="objText" autocomplete="off" aria-label="Tell the jury why you disagree" placeholder="For example: Jordan was actually a new client">
+            <button class="iconbtn mic" id="objMic" type="button" aria-label="Speak instead of typing"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0014 0M12 18v3"/></svg></button>
+          </div>
+          <button class="btn" id="recheck" type="button">Re-check</button>
+        </div>
+        <details class="why" id="whyBox">
+          <summary>Why?</summary>
+          <div id="whyBody"></div>
+        </details>
+        <div class="decide">
+          <button class="btn primary" id="juryApprove">Approve</button>
+          <button class="btn" id="juryAdjust">Adjust</button>
+          <button class="btn" id="juryEscalate">Escalate</button>
+        </div>
+        <div class="actions">
+          <button class="btn ghost" id="juryBack">Back to session</button>
+        </div>
+      </section>
+
+      <!-- Draft -->
+      <section class="screen" data-screen="draft" hidden>
+        <div class="head-row"><h1 id="draftTitle">Your draft</h1><span class="ollie sm p3" id="draftOllie" aria-hidden="true"></span></div>
+        <p class="sub" id="draftSub">Real names are back in here, for you to check.</p>
+        <div class="email">
+          <p class="email-meta" id="draftTo"></p>
+          <pre id="draftBody"></pre>
+        </div>
+        <div class="actions col">
+          <button class="btn primary" id="copyBtn">Copy</button>
+          <button class="btn send" id="sendBtn" aria-disabled="true" title="Nothing is sent until you press Send, and this demo has no Send.">Nothing is sent until you press Send</button>
+          <button class="btn" id="askOllie">Ask Ollie about this</button>
+          <button class="btn ghost" id="draftBack">Back to session</button>
+        </div>
+        <p class="tiny" id="copyNote" aria-live="polite"></p>
+      </section>
+
+      <!-- Study pack -->
+      <section class="screen" data-screen="study" hidden>
+        <div class="head-row"><h1 id="studyTitle">Study pack</h1><span class="ollie sm p5" data-state="thinking" aria-hidden="true"></span></div>
+        <p class="sub">Trusted sources only. Open each one and read it yourself.</p>
+        <div class="sources" id="sources"></div>
+        <p class="tiny" id="studyChecked"></p>
+        <div class="actions col">
+          <button class="btn primary" id="studyQuiz" type="button">Quiz me</button>
+          <button class="btn ghost" id="studyBack" type="button">Back to session</button>
+        </div>
+      </section>
+
+      <!-- Quiz -->
+      <section class="screen" data-screen="quiz" hidden>
+        <p class="eyebrow" id="quizCount"></p>
+        <div id="quizBody" aria-live="polite"></div>
+      </section>
+
+      <!-- Walkie-talkie -->
+      <section class="screen talk" data-screen="talk" hidden>
+        <div class="seg talk-mode" id="talkMode" role="group" aria-label="Talk mode">
+          <button data-v="chat" aria-pressed="false">Chat</button><button data-v="walkie" aria-pressed="true">Walkie-talkie</button>
+        </div>
+        <div class="walkie" id="walkie" hidden>
+          <span class="ollie sm p7 walk-av" id="walkAv" aria-hidden="true"></span>
+          <p class="walk-status" id="walkStatus" role="status">Hold the button and talk</p>
+          <div class="walk-text" aria-live="polite">
+            <p class="walk-you" id="walkYou"></p>
+            <p class="walk-reply" id="walkReply">Ask me about your fees, invoices, deadlines or your essay.</p>
+          </div>
+          <div class="wave" id="wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <form class="walk-type" id="walkForm" autocomplete="off" hidden>
+            <input type="text" id="walkInput" aria-label="Type to Ollie" placeholder="Type to Ollie">
+            <button class="btn primary" type="submit">Send</button>
+          </form>
+          <button class="hold" id="holdBtn" type="button" aria-label="Hold to talk"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0014 0M12 18v3"/></svg><span>Hold to talk</span></button>
+          <button class="linkbtn walk-link" id="walkTypeLink" type="button">Type instead</button>
+        </div>
+      </section>
+
+      <!-- Settings -->
+      <section class="screen" data-screen="settings" hidden>
+        <h1>Settings</h1>
+        <div class="setting">
+          <span id="lblTheme">Appearance</span>
+          <div class="seg" role="group" aria-labelledby="lblTheme" id="segTheme">
+            <button data-v="light">Light</button><button data-v="dark">Dark</button>
+          </div>
+        </div>
+        <div class="setting">
+          <span id="lblSize">Text size</span>
+          <div class="seg" role="group" aria-labelledby="lblSize" id="segSize">
+            <button data-v="normal">Normal</button><button data-v="large">Large</button>
+          </div>
+        </div>
+        <div class="setting">
+          <span id="lblJury">Jury answers</span>
+          <div class="seg" role="group" aria-labelledby="lblJury" id="segJury">
+            <button data-v="recorded">Recorded</button><button data-v="live">Live (local AI)</button>
+          </div>
+        </div>
+        <div class="setting">
+          <span id="lblSpeak">Read replies aloud</span>
+          <div class="seg" role="group" aria-labelledby="lblSpeak" id="segSpeak">
+            <button data-v="off">Off</button><button data-v="on">On</button>
+          </div>
+        </div>
+        <p class="tiny" id="liveNote"></p>
+        <p class="tiny">Live mode asks a model running on this laptop and sends only anonymised facts. If it is not running, recorded answers are shown. Live mode also covers questions Ollie can't answer from your results.</p>
+        <div class="lawcheck">
+          <h2 class="mini-h">Law check</h2>
+          <p class="tiny" id="lawLine">Not run yet.</p>
+          <details class="fold" id="lawFold" hidden><summary>See each question</summary><div class="fold-body"><ul class="dl-list" id="lawList"></ul></div></details>
+          <p class="tiny">This is the small AI on this laptop on its own. When we tested it, it cited a "Companies Act 2016", which doesn't exist. That's why Ollie's law comes from a checked rulebook in code, and the AI only gives opinions.</p>
+          <p class="tiny">A test, not a guarantee. Format from Harvey's open legal benchmark (MIT licence).</p>
+        </div>
+        <div class="actions"><button class="btn" id="knowBtn" type="button">What Ollie knows about you</button></div>
+        <div class="actions"><button class="btn danger" id="startAgain" type="button">Start again</button></div>
+        <p class="tiny">Clears your answers and files on this device and goes back to the start.</p>
+      </section>
+
+    </main>
+
+    <nav class="tabbar" id="tabbar" aria-label="Main" hidden>
+      <button class="tab" data-tab="sess"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H10l-5 4v-4H4z"/></svg><span>Chat</span></button>
+      <button class="tab" data-tab="report"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21v-8M12 13c-4 0-7-3-7-7 4 0 7 3 7 7zM12 13c4 0 7-3 7-7-4 0-7 3-7 7z"/></svg><span>Progress</span></button>
+      <button class="tab" data-tab="news"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>What's new</span></button>
+      <button class="tab" data-tab="settings"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 3v2.5M12 18.5V21M3 12h2.5M18.5 12H21M5.6 5.6l1.8 1.8M16.6 16.6l1.8 1.8M5.6 18.4l1.8-1.8M16.6 7.4l1.8-1.8"/></svg><span>Settings</span></button>
+    </nav>
+
+    <div class="stories-view" id="storyView" hidden role="dialog" aria-modal="true" aria-label="Stories"></div>
+
+    <div class="drawer" id="drawer" hidden>
+      <div class="drawer-back" id="drawerBack"></div>
+      <aside class="drawer-panel" role="dialog" aria-modal="true" aria-label="Your sessions">
+        <button class="btn primary drawer-new" id="drawerNew" type="button">New session</button>
+        <div class="drawer-list" id="drawerList"></div>
+      </aside>
+    </div>
+
+    <div class="dlg" id="dlg" hidden>
+      <form class="dlg-card" id="dlgForm" role="dialog" aria-modal="true" aria-labelledby="dlgTitle">
+        <h2 class="mini-h" id="dlgTitle"></h2>
+        <p class="tiny" id="dlgText"></p>
+        <input type="text" id="dlgInput" aria-label="Session name" autocomplete="off" hidden>
+        <div class="actions"><button class="btn ghost" id="dlgNo" type="button">Cancel</button><button class="btn primary" id="dlgYes" type="submit">OK</button></div>
+      </form>
+    </div>
+
+    <div class="sheet" id="sheet" hidden></div>
+    <div class="toast" id="toast" role="status" hidden></div>
+  </div>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,5 @@
+invoice,customer,customer_type,amount,issued,due,paid
+INV-104,Lumen Studio Ltd,business,640.00,2026-08-28,2026-09-27,no
+INV-109,Brightside Events Ltd,business,1250.00,2026-09-15,2026-10-15,no
+INV-111,Mrs Campbell,consumer,85.00,2026-10-01,2026-10-15,no
+INV-098,Clyde Photo Co,business,300.00,2026-08-01,2026-08-31,yes

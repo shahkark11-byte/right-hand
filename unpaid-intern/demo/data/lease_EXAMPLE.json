@@ -1,0 +1,2 @@
+{ "note": "EXAMPLE tenancy, made up for the demo", "landlord": "Example Lettings", "address": "Flat 2/1, Example Street, Glasgow", "start": "2026-02-01", "end": "2026-10-15", "deposit": 600,
+  "schemes_checked": [ { "name": "SafeDeposits Scotland", "found": false }, { "name": "MyDeposits Scotland", "found": false }, { "name": "Letting Protection Service Scotland", "found": false } ] }

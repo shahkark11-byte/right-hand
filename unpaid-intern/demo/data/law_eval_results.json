@@ -1,0 +1,85 @@
+{
+  "date": "2026-11-06",
+  "model": "qwen3:8b",
+  "score": 1,
+  "total": 10,
+  "results": [
+    {
+      "id": "salomon",
+      "pass": true,
+      "missed": []
+    },
+    {
+      "id": "one-director",
+      "pass": false,
+      "missed": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "scots-partnership",
+      "pass": false,
+      "missed": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "llp-members",
+      "pass": false,
+      "missed": [
+        0
+      ]
+    },
+    {
+      "id": "hedley",
+      "pass": false,
+      "missed": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "immigration-advice",
+      "pass": false,
+      "missed": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "director-guilty",
+      "pass": false,
+      "missed": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "pecr-sole-trader",
+      "pass": false,
+      "missed": [
+        0,
+        2
+      ]
+    },
+    {
+      "id": "pecr-scots-partnership",
+      "pass": false,
+      "missed": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "deposit",
+      "pass": false,
+      "missed": [
+        0,
+        1,
+        2
+      ]
+    }
+  ]
+}
